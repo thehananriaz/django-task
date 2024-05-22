@@ -23,7 +23,7 @@ class Song(models.Model):
 
     def sung_by(self):
         return ",".join([str(p) for p in self.user.all()])
- 
+    
 class ExamCenter(models.Model):
     center_name = models.CharField(max_length=70)
     city = models.CharField(max_length=70)
@@ -39,3 +39,8 @@ class CommonInfo(models.Model):
 
     class Meta:
         abstract = True
+
+class Dealer(models.Model):
+    name= models.CharField(max_length=40)
+    niche = models.CharField(max_length=30, null= True)
+    sale= models.IntegerField()
