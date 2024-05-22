@@ -44,3 +44,8 @@ class Dealer(models.Model):
     name= models.CharField(max_length=40)
     niche = models.CharField(max_length=30, null= True)
     sale= models.IntegerField()
+
+class Quality(models.Model):
+    quality = models.CharField(max_length=100)
+    is_good = models.BooleanField(default=True)
+    is_bad = models.BooleanField(default=False)

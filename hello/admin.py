@@ -26,3 +26,14 @@ class StudentAdmin(admin.ModelAdmin):
 class DealerAdmin(admin.ModelAdmin):
     list_display = ['name', 'niche', 'sale']
 
+@admin.register(Quality)
+class QualityAdmin(admin.ModelAdmin):
+    model = Quality
+
+    fiels = ['quality', 'is_good']
+    list_display = ['quality', 'is_good']
+    actions = ['make_bad']
+    def make_bad(self, request, queryset):
+        queryset.update(is_good = False)
+    
+
