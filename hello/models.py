@@ -23,7 +23,7 @@ class Song(models.Model):
 
     def sung_by(self):
         return ",".join([str(p) for p in self.user.all()])
- 
+    
 class ExamCenter(models.Model):
     center_name = models.CharField(max_length=70)
     city = models.CharField(max_length=70)
