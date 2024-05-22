@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
+app_name = "hello"
 
 urlpatterns = [
-    path('registration/', views.showformdata),
+    path('registration/', views.showformdata , name = "dealerurl"),
 ]

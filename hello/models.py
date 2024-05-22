@@ -40,7 +40,7 @@ class CommonInfo(models.Model):
     class Meta:
         abstract = True
 
-class User(models.Model):
+class Dealer(models.Model):
     name= models.CharField(max_length=40)
-    password= models.CharField(max_length=40)
-    name= models.EmailField(max_length=40)
+    niche = models.CharField(max_length=30, null= True)
+    sale= models.IntegerField()

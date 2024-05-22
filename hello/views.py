@@ -1,10 +1,19 @@
-from django.shortcuts import render
-from .forms import StudentRegistration
+from django.shortcuts import render , redirect
+from .forms import DealerForm
 from django.http import HttpResponse
 
 
 def home(request):
     return HttpResponse("yo")
 def showformdata(request):
-    sf=StudentRegistration()
-    return render(request, 'forms/regi.html', {'form':sf})
+    if request.method == "GET":
+        sf=DealerForm()
+        return render(request, 'forms/regi.html', {'form':sf})
+    elif request.method == "POST":
+        form = DealerForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return redirect("hello:dealerurl")
+
+    
+    

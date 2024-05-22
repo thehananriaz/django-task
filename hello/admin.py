@@ -22,3 +22,7 @@ class MyExamCenterAdmin(admin.ModelAdmin):
 class StudentAdmin(admin.ModelAdmin):
     list_display = ['name', 'age', 'email' ,'address']
 
+@admin.register(Dealer)
+class DealerAdmin(admin.ModelAdmin):
+    list_display = ['name', 'niche', 'sale']
+
