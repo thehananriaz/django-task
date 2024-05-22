@@ -1,2 +1,6 @@
 # django-task
-Django tasks.
+Django forms
+
+Admin 
+user: admin
+pass: admin
