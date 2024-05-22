@@ -39,3 +39,8 @@ class CommonInfo(models.Model):
 
     class Meta:
         abstract = True
+
+class User(models.Model):
+    name= models.CharField(max_length=40)
+    password= models.CharField(max_length=40)
+    name= models.EmailField(max_length=40)
